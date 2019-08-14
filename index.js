@@ -12,5 +12,35 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  //toTitleCase('Weebo greebo.')
+  // console.log(tutorials)
+   //tutorials = tutorials.map(toTitleCase)
+ let temp = tutorials.map(toTitleCase)
+  //tutorials = temp
+  //return tutorials
+  return temp
+}
+
+// function toTitleCase(str){
+//   console.log(str)
+// }
+
+function toTitleCase(str){
+  str = str.split(' ')
+  let temp = []
+  str.forEach(word =>{
+      let tempLetter = word[0].toUpperCase();
+      word = word.replace(word[0] , tempLetter)
+      console.log(word + ": New Word")
+      temp.push(word)
+   })
+
+   let sentence = ''
+   for(let i = 0; i < temp.length; i++){
+    sentence += `${temp[i]} `
+   }
+   sentence = sentence.substring(0 , sentence.length -1)
+   //console.log(sentence)
+   return sentence
+
 }
